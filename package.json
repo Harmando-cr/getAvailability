@@ -9,7 +9,8 @@
   "author": "Hosmar Colmenares",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.10.3"
+    "dayjs": "^1.10.3",
+    "jsonschema": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^7.18.0",

@@ -211,7 +211,7 @@ describe('Availability', () => {
         ],
 
       );
-      assert.strictEqual(totalSeconds, 'Error: uno de los rangos esta mal definido');
+      assert.strictEqual(totalSeconds, 'Error: El formato o longitud de la configuracion de disponibilidad es incorrecto');
     });
   });
 
@@ -254,6 +254,26 @@ describe('Availability', () => {
         ],
       );
       assert.strictEqual(totalSeconds, 162000);
+    });
+  });
+
+  describe('7 days, bad availability config', () => {
+    it('should return error', () => {
+      const totalSeconds = Availability.getAvailableSeconds(
+        new Date('2021-01-11T00:00:00.000+0000'),
+        new Date('2021-01-18T00:00:00.000+0000'),
+        [
+          {
+            day: 1,
+            ranges: [[32400, 64800]],
+          },
+          {
+            day: 2,
+            ranges: [[32400, 64800]],
+          }
+        ],
+      );
+      assert.strictEqual(totalSeconds, 'Error: El formato o longitud de la configuracion de disponibilidad es incorrecto');
     });
   });
 

@@ -72,6 +72,7 @@ new Date("2021-01-08T00:00:00.000+0000")
 Get Available Seconds exercise uses a number of dependencies to work properly:
 
 * [Dayjs](https://day.js.org/) - Fast 2kB alternative to Moment.js with the same modern API
+* [jsonSchema](https://json-schema.org/) - JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
 * [Mocha](https://mochajs.org/) - Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.
 * [nyc](https://github.com/istanbuljs/nyc) - Istanbul instruments your ES5 and ES2015+ JavaScript code with line counters, so that you can track how well your unit-tests exercise your codebase.
 * [Eslint](https://eslint.org/docs/developer-guide/nodejs-api) - ESLint statically analyzes your code to quickly find problems
@@ -98,5 +99,12 @@ The test validate several cases:
 - Dates are null, undefined, or invalid
 - Invalid range
 - Multiples day with correct dates and availability
+
+-----------------|---------|----------|---------|---------|-------------------
+File             | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-----------------|---------|----------|---------|---------|-------------------
+All files        |     100 |      100 |     100 |     100 |
+ availability.js |     100 |      100 |     100 |     100 |
+-----------------|---------|----------|---------|---------|-------------------
 
 
