@@ -18,22 +18,13 @@ class Availability {
   }
 
   getSecondsFromRange(ranges) {
-    return ranges.reduce((acc, elm) => {
-      if (elm[1] > elm[0]) {
-        return acc + (elm[1] - elm[0]);
-      }
-      return undefined;
-    }, 0);
+    return ranges.reduce((acc, elm) => elm[1] > elm[0] ? acc + (elm[1] - elm[0]) : undefined, 0);
   }
 
   getAvailabilityPerDay(availabilityConfig) {
     return availabilityConfig.reduce((acc, elm) => {
       if (!elm.closed) {
-        if (elm.ranges.length) {
-          acc[elm.day] = this.getSecondsFromRange(elm.ranges);
-        } else {
-          acc[elm.day] = 86400;
-        }
+        acc[elm.day] = elm.ranges.length ? this.getSecondsFromRange(elm.ranges): 86400;
       } else {
         acc[elm.day] = 0;
       }

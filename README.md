@@ -85,7 +85,18 @@ Install the dependencies and devDependencies and run the tests.
 $ npm i
 $ npm run test
 ```
-### Description
 
-Get Available Seconds exercise uses a number of dependencies to work properly:
+The test validate several cases:
+
+- Range of a Day empty - full availability
+- Day with only one range
+- Day with multiple ranges
+- One day closed
+- FromDate and toDate are the same
+- Less than one day of difference between fromData and toDate
+- ToDate before fromDate
+- Dates are null, undefined, or invalid
+- Invalid range
+- Multiples day with correct dates and availability
+
 

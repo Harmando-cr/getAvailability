@@ -198,6 +198,23 @@ describe('Availability', () => {
     });
   });
 
+  describe('invalid range type', () => {
+    it('should return error', () => {
+      const totalSeconds = Availability.getAvailableSeconds(
+        new Date('2021-01-01T00:00:00.000+0000'),
+        new Date('2021-01-02T00:00:00.000+0000'),
+        [
+          {
+            day: 5,
+            ranges: [{}],
+          },
+        ],
+
+      );
+      assert.strictEqual(totalSeconds, 'Error: uno de los rangos esta mal definido');
+    });
+  });
+
   describe('7 days, different availabilities', () => {
     it('should return 162000 seconds', () => {
       const totalSeconds = Availability.getAvailableSeconds(
