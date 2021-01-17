@@ -1,5 +1,7 @@
 const assert = require('assert');
-const Availability = require('../availability');
+const AvailabilityUtil = require('../availability');
+
+const Availability = new AvailabilityUtil()
 
 describe('Availability', () => {
   describe('One day, available all day', () => {
